@@ -9,6 +9,7 @@ Attribute-first, type-safe query composition for Laravel Eloquent models.
 Track planned feature waves in GitHub Projects:
 
 - [Queryable Roadmap](https://github.com/users/zaruto/projects)
+- [In-Repo Backlog](./ROADMAP.md)
 
 ## Compatibility
 
