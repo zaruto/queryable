@@ -7,7 +7,6 @@ namespace Zaruto\Queryable\Filtering;
 use Illuminate\Database\Eloquent\Builder;
 use Zaruto\Queryable\Contracts\OperatorResolverContract;
 use Zaruto\Queryable\Enums\FilterOperator;
-use Zaruto\Queryable\Exceptions\UnsupportedOperatorException;
 
 final class OperatorResolver implements OperatorResolverContract
 {
@@ -25,7 +24,6 @@ final class OperatorResolver implements OperatorResolverContract
             FilterOperator::StartsWith => $query->where($field, 'like', "{$value}%"),
             FilterOperator::In => $query->whereIn($field, $this->explodeList($value)),
             FilterOperator::NotIn => $query->whereNotIn($field, $this->explodeList($value)),
-            default => throw new UnsupportedOperatorException("Unsupported filter operator [{$operator->value}]."),
         };
     }
 
