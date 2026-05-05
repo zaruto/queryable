@@ -313,6 +313,34 @@ CI workflow coverage:
 - lint (`.github/workflows/lint.yml`)
 - static analysis (`.github/workflows/static-analysis.yml`)
 
+## Pre-Tag Release Gate
+
+Run this before creating any new release tag:
+
+```bash
+composer run release:gate
+```
+
+This runs, in order:
+
+1. `composer install`
+2. `./vendor/bin/pint --test`
+3. `./vendor/bin/phpstan analyse --error-format=table`
+4. `./vendor/bin/pest --ci`
+
+For additional Laravel matrix spot-checks (recommended for release candidates/finals):
+
+```bash
+composer run release:gate:matrix
+```
+
+This additionally runs sequential checks for:
+
+- Laravel `12.*` + Testbench `^10.0`
+- Laravel `13.*` + Testbench `^11.0`
+
+Tagging rule: only create/push a tag if the gate passes and the working tree is clean.
+
 ## Roadmap (Concise)
 
 - Custom operator registration.

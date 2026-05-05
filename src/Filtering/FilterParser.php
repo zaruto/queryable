@@ -40,7 +40,7 @@ final class FilterParser implements FilterParserContract
     /** @return array<int, string> */
     private function tokenize(string $input): array
     {
-        $pattern = '/\s*(\(|\)|and|or|not\s+in|eq|ne|gt|lt|gte|lte|in|like|contains|starts_with|[a-zA-Z_\.]+|"(?:[^"\\\\]|\\\\.)*"|[^,\s()]+)\s*/i';
+        $pattern = '/\s*(\(|\)|and|or|not\s+in|gte|lte|starts_with|contains|like|eq|ne|gt|lt|in|[a-zA-Z_\.]+|"(?:[^"\\\\]|\\\\.)*"|[^,\s()]+)\s*/i';
         preg_match_all($pattern, $input, $matches);
 
         $rawTokens = $matches[1];

@@ -52,7 +52,9 @@
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
+        "format": "vendor/bin/pint",
+        "release:gate": "bash scripts/release-gate.sh",
+        "release:gate:matrix": "bash scripts/release-gate.sh --matrix"
     },
     "config": {
         "sort-packages": true,
