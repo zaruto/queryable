@@ -4,6 +4,12 @@ Attribute-first, type-safe query composition for Laravel Eloquent models.
 
 `zaruto/queryable` helps API teams safely expose `search`, `filter`, and `sort` query params without allowing arbitrary field/operator access.
 
+## Roadmap
+
+Track planned feature waves in GitHub Projects:
+
+- [Queryable Roadmap](https://github.com/users/zaruto/projects)
+
 ## Compatibility
 
 - PHP: `8.3`, `8.4`, `8.5`
